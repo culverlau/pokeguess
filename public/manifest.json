@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PokeGuess",
+  "name": "PokeGuess, a Pokemon Guessing Game",
   "icons": [
     {
       "src": "favicon.ico",
