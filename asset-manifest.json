@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/pokeguess/static/css/main.f78781b2.chunk.css",
+    "main.js": "/pokeguess/static/js/main.5710af79.chunk.js",
+    "main.js.map": "/pokeguess/static/js/main.5710af79.chunk.js.map",
+    "runtime-main.js": "/pokeguess/static/js/runtime-main.27eae8a3.js",
+    "runtime-main.js.map": "/pokeguess/static/js/runtime-main.27eae8a3.js.map",
+    "static/js/2.6e77aa95.chunk.js": "/pokeguess/static/js/2.6e77aa95.chunk.js",
+    "static/js/2.6e77aa95.chunk.js.map": "/pokeguess/static/js/2.6e77aa95.chunk.js.map",
+    "static/js/3.40527f99.chunk.js": "/pokeguess/static/js/3.40527f99.chunk.js",
+    "static/js/3.40527f99.chunk.js.map": "/pokeguess/static/js/3.40527f99.chunk.js.map",
+    "index.html": "/pokeguess/index.html",
+    "static/css/main.f78781b2.chunk.css.map": "/pokeguess/static/css/main.f78781b2.chunk.css.map",
+    "static/js/2.6e77aa95.chunk.js.LICENSE.txt": "/pokeguess/static/js/2.6e77aa95.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/pokeguess/static/media/pokemon-solid.5d60be1f.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.27eae8a3.js",
+    "static/js/2.6e77aa95.chunk.js",
+    "static/css/main.f78781b2.chunk.css",
+    "static/js/main.5710af79.chunk.js"
+  ]
+}
