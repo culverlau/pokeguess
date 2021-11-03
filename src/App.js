@@ -29,10 +29,10 @@ function App() {
     time: 5,
   });
 
-  const numberOfRounds = 3;
+  const numberOfRounds = 10;
   const pokemonPerRound = 4;
 
-  // Populate Pokemon Data
+  // Populate Pokemon Data, up to numberOfRounds
   React.useEffect(() => {
     if (!(pokemonData.length < numberOfRounds)) {
       return;
@@ -70,10 +70,12 @@ function App() {
   };
 
   const getNewRound = () => {
+    // Start Screen
     if (!gameStatus.playing) {
       setGameStatus({ type: 'start' });
       startRound();
-    } else if (gameStatus.roundsCompleted === numberOfRounds) {
+    } else // Final Score Screen
+    if (gameStatus.roundsCompleted === numberOfRounds) {
       setGameStatus({ type: 'final' });
       setPokemonData([]);
       setMessage('Total Score: ' + gameStatus.score + '/' + numberOfRounds);
@@ -121,17 +123,19 @@ function App() {
         </div>
       </ContentSection>
       <SelectorSection>
+        {/* Display Pokemon Selection Buttons */}
         {countdown.isActive ? (
           <PokemonSelector
             pokemonData={pokemonData[gameStatus.currentRound]}
             selectPokemon={selectPokemon}
           />
-        ) : !pokemonData[0] ||
+        ) : // Display Loading text if next round is not yet ready
+        !pokemonData[0] ||
           (gameStatus.roundsCompleted < numberOfRounds &&
             !pokemonData[gameStatus.currentRound + 1]) ? (
           <Button disabled>Loading...</Button>
-        ) : (
-          <Button onClick={getNewRound}>
+        ) : // Display New Round Button (including Start and Final Score screens)
+        (<Button onClick={getNewRound}>
             {gameStatus.playing
               ? gameStatus.roundsCompleted < numberOfRounds
                 ? 'Next Round'
