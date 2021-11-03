@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import burstBackground from '../assets/images/burst-bg.png'
 
 const StyledPokemonImage = styled.div`
   position: relative;
@@ -88,7 +89,7 @@ const PokemonImage = ({ guessing, pokemonData }) => {
   return (
     <StyledPokemonImage>
       <div className='pokemon-bg'>
-        <img src='/burst-bg.png' />
+        <img src={burstBackground} />
       </div>
       <div className={`pokemon-image ${guessing ? 'silhouette' : ''}`}>
         <img
