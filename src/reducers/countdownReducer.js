@@ -7,6 +7,8 @@ const countdownReducer = (state, action) => {
       return { ...state, isActive: false };
     case 'subtract':
       return { ...state, time: state.time - 1 };
+    default:
+      return state
   }
 };
 

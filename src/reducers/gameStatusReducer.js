@@ -10,6 +10,8 @@ const gameStatusReducer = (state, action) => {
       return { ...state, roundsCompleted: state.roundsCompleted + 1 };
     case 'score':
       return { ...state, score: state.score + 1 };
+    default:
+      return state
   }
 };
 

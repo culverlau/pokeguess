@@ -89,7 +89,7 @@ const PokemonImage = ({ guessing, pokemonData }) => {
   return (
     <StyledPokemonImage>
       <div className='pokemon-bg'>
-        <img src={burstBackground} />
+        <img src={burstBackground} alt="Blue Flashing Background behind Pokemon" />
       </div>
       <div className={`pokemon-image ${guessing ? 'silhouette' : ''}`}>
         <img
