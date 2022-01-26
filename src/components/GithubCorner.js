@@ -42,7 +42,7 @@ const StyledGithubCorner = styled.a`
 const GithubCorner = () => {
   return (
     <StyledGithubCorner
-      href='https://your-url'
+      href='https://github.com/culverlau/pokeguess'
       className='github-corner'
       aria-label='View source on GitHub'
     >
