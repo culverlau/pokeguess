@@ -14,6 +14,7 @@ import countdownReducer from './reducers/countdownReducer';
 import gameStatusReducer from './reducers/gameStatusReducer';
 
 import fetchPokemon from './services/fetchPokemon';
+import { Helmet } from 'react-helmet';
 
 function App() {
   const [message, setMessage] = React.useState(null);
@@ -74,8 +75,8 @@ function App() {
     if (!gameStatus.playing) {
       setGameStatus({ type: 'start' });
       startRound();
-    } else // Final Score Screen
-    if (gameStatus.roundsCompleted === numberOfRounds) {
+    } // Final Score Screen
+    else if (gameStatus.roundsCompleted === numberOfRounds) {
       setGameStatus({ type: 'final' });
       setPokemonData([]);
       setMessage('Total Score: ' + gameStatus.score + '/' + numberOfRounds);
@@ -100,6 +101,29 @@ function App() {
 
   return (
     <Layout playing={gameStatus.playing}>
+      <Helmet>
+        {/* Global site tag (gtag.js) - Google Analytics */}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-7M1YZJK007'
+        ></script>
+        <script>
+          {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7M1YZJK007');
+        `}
+        </script>
+        <script type='text/javascript'>
+          {`(function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "auwgv3b76e");`}
+        </script>
+      </Helmet>
       <ContentSection>
         {gameStatus.playing && (
           <PokemonImage
@@ -134,8 +158,9 @@ function App() {
           (gameStatus.roundsCompleted < numberOfRounds &&
             !pokemonData[gameStatus.currentRound + 1]) ? (
           <Button disabled>Loading...</Button>
-        ) : // Display New Round Button (including Start and Final Score screens)
-        (<Button onClick={getNewRound}>
+        ) : (
+          // Display New Round Button (including Start and Final Score screens)
+          <Button onClick={getNewRound}>
             {gameStatus.playing
               ? gameStatus.roundsCompleted < numberOfRounds
                 ? 'Next Round'
